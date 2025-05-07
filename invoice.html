@@ -3,19 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invoice</title>
     <style>
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f8f9fa;
             margin: 0;
-            padding: 20px;
         }
         .invoice {
-            max-width: 800px;
-            margin: auto;
             background: white;
-            padding: 20px;
+            padding: 10px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -41,6 +38,7 @@
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
+            font-weight: bolder;
         }
         th {
             background-color: #f2f2f2;
@@ -49,11 +47,13 @@
             font-weight: bold;
         }
         .net-total {
-            font-size: 1.5rem;
-            color: #007bff;
+            font-size: 3rem;
         }
         h3 {
-            margin: 0;
+            margin: 4px;
+        }
+        p {
+            font-weight: 900;
         }
     </style>
 </head>
@@ -113,13 +113,25 @@
         </tbody>
     </table>
 
-    <div class="summary">
-        <h3>Total Items: 731</h3>
-        <h4>Total: 30454</h4>
-        <h4>10% DISCOUNT: -3045.4</h4>
-        <h4 class="net-total">Net Total: 27409</h4>
+ 
+    <div class="summary" style="display: flex; flex-direction: column; gap: 10px;width: 80%;; margin: 0 auto 20px;">
+        <div class="summary-item" style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1rem;">
+            <span>Total Items:</span>
+            <span id="total-items">731</span>
+        </div>
+        <div class="summary-item" style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1rem;">
+            <span>Total:</span>
+            <span id="total-amount">30454</span>
+        </div>
+        <div class="summary-item" style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1rem;">
+            <span>10% DISCOUNT:</span>
+            <span id="discount">-3045.4</span>
+        </div>
+        <div class="summary-item net-total" style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1rem;">
+            <span>Net Total:</span>
+            <span id="net-total">27409</span>
+        </div>
     </div>
-
     <div class="footer">
         <h3>FIXED PRICE SHOP</h3>
     </div>
